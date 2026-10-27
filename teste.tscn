@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://iptnvyrtxsyn"]
+
+[ext_resource type="Texture2D" uid="uid://db4blsgk487rn" path="res://actors/animals/cat/faceset.png" id="1_o02vu"]
+
+[node name="Teste" type="Node2D" unique_id=1742878871]
+
+[node name="Faceset" type="Sprite2D" parent="." unique_id=1509764131]
+texture_filter = 1
+position = Vector2(125, 72)
+texture = ExtResource("1_o02vu")

@@ -14,10 +14,17 @@ config/name="NinjaAdventureUdemy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://bpft1y6y54587"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="canvas_items"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
