@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dwke6o4wwiy7p"]
 
+[ext_resource type="Script" uid="uid://00jepbum3s78" path="res://actors/characters/personagem_base.gd" id="1_k3xxx"]
 [ext_resource type="Texture2D" uid="uid://cnwmdbvqfj6gg" path="res://actors/characters/egg_boy/spritesheet.png" id="1_nkbnp"]
 
 [sub_resource type="Animation" id="Animation_nkbnp"]
@@ -378,7 +379,9 @@ _data = {
 &"pulo_e": SubResource("Animation_eaol1")
 }
 
-[node name="PersonagemBase" type="CharacterBody2D" unique_id=1125852789]
+[node name="PersonagemBase" type="CharacterBody2D" unique_id=1125852789 node_paths=PackedStringArray("_animador")]
+script = ExtResource("1_k3xxx")
+_animador = NodePath("Animador")
 
 [node name="Textura" type="Sprite2D" parent="." unique_id=1122128827]
 texture = ExtResource("1_nkbnp")
