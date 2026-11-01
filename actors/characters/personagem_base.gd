@@ -1,13 +1,28 @@
 extends CharacterBody2D
 class_name PersonagemBase
 
+enum Personagens {
+	egg_boy = 0, hunter = 1, mask_racoon = 2,
+	monkey_boxer_blue = 3, robot_comouflage = 4
+}
+
 var _ataque_selecionado: String = ""
 var _prefixo_animacao: String = "_b"
 var _pode_atacar: bool = true
 var _atacando: bool = false
 
-@export_category("Objects")
+@export_category("Objetos")
 @export var _animador: AnimationPlayer
+
+@export_category("Variaveis")
+@export var _textura: Sprite2D
+@export var _personagem_selecionado: Personagens
+@export var _codigo_personagem: Array[String]
+
+func _ready():
+	_textura.texture = load(
+		'res://actors/characters/' + _codigo_personagem[_personagem_selecionado] + '/spritesheet.png'
+	)
 
 func _physics_process(delta: float) -> void:
 	var direcao: Vector2 = Input.get_vector(
