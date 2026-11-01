@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name PersonagemBase
 
+var _ataque_selecionado: String = ""
 var _prefixo_animacao: String = "_b"
 var _pode_atacar: bool = true
 var _atacando: bool = false
@@ -29,6 +30,19 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("ataque") and _pode_atacar:
+		_ataque_selecionado = "ataque" + _prefixo_animacao
+		set_physics_process(false)
+		_pode_atacar = false
+		_atacando = true
+	
+	elif Input.is_action_just_pressed("ataque_especial_1") and _pode_atacar:
+		_ataque_selecionado = "ataque_especial_1"
+		set_physics_process(false)
+		_pode_atacar = false
+		_atacando = true
+		
+	elif Input.is_action_just_pressed("ataque_especial_2") and _pode_atacar:
+		_ataque_selecionado = "ataque_especial_2"
 		set_physics_process(false)
 		_pode_atacar = false
 		_atacando = true
@@ -37,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
 func _animar() -> void:
 	if _atacando == true:
-		_animador.play("ataque" + _prefixo_animacao)
+		_animador.play(_ataque_selecionado)
 	
 	elif velocity == Vector2.ZERO:
 		_animador.play("parado" + _prefixo_animacao)
