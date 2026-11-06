@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://00jepbum3s78" path="res://actors/characters/personagem_base.gd" id="1_k3xxx"]
 [ext_resource type="Texture2D" uid="uid://fdolmqkfyde2" path="res://actors/characters/hunter/spritesheet.png" id="2_k3xxx"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3xxx"]
+size = Vector2(14, 3)
+
 [sub_resource type="Animation" id="Animation_nkbnp"]
 length = 0.001
 tracks/0/type = "value"
@@ -392,6 +395,8 @@ hframes = 4
 vframes = 7
 
 [node name="Colisor" type="CollisionShape2D" parent="." unique_id=661401472]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_k3xxx")
 
 [node name="Animador" type="AnimationPlayer" parent="." unique_id=153050222]
 libraries/ = SubResource("AnimationLibrary_oudk8")
